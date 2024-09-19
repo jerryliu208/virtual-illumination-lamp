@@ -2,7 +2,7 @@
   "name": "virtual-illumination-lamp",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://jerryliu208.github.io/",
+  "homepage": "https://jerryliu208.github.io/virtual-illumination-lamp/",
   "scripts": {
     "serve": "vue-cli-service serve --port 8080 --host 0.0.0.0",
     "build": "vue-cli-service build",
