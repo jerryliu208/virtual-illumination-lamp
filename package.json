@@ -5,11 +5,10 @@
   "homepage": "https://jerryliu208.github.io/",
   "scripts": {
     "serve": "vue-cli-service serve --port 8080 --host 0.0.0.0",
+    "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "start": "react-scripts start",
-    "build": "react-scripts build"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@vue/cli-service": "~5.0.8",
