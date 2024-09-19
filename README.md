@@ -2,67 +2,56 @@
 
 This is an online platform for lighting virtual illumination lamps, developed using Vue.js 3. Users can light lamps for themselves and their loved ones, offering prayers and blessings.
 
-- You can visit the website at https://jerryliu208.github.io/virtual-illumination-lamp/
+Visit the website: [Virtual Illumination Lamp Platform](https://jerryliu208.github.io/virtual-illumination-lamp/)
 
 ## Features
 
 - User registration and login
-- Browse different types of illumination lamps
+- Browse and select from various types of illumination lamps
 - Light lamps and leave prayer messages
-- View lamp status
-- Admin backend management system
+- View lamp status and personal order history
+- User profile management
+- Admin backend system for managing users, lamps, orders, and system settings
 
 ## Technology Stack
 
 - Vue.js 3
 - Vue Router 4
 - Vuex 4
-- Axios (for simulated API calls)
+- Axios (for API calls simulation)
 
 ## Prerequisites
-
-Before you begin, ensure you have met the following requirements:
 
 - Node.js (v14 or higher)
 - npm (v6 or higher)
 
-## Installing and Running the Project Locally
+## Local Development Setup
 
-Follow these steps to get your development environment set up:
-
-1. Clone the repository
+1. Clone the repository:
    ```
    git clone https://github.com/your-username/virtual-illumination-lamp.git
    ```
 
-2. Navigate to the project directory
+2. Navigate to the project directory:
    ```
    cd virtual-illumination-lamp
    ```
 
-3. Install dependencies
+3. Install dependencies:
    ```
    npm install
    ```
 
-4. Run the development server
+4. Run the development server:
    ```
    npm run serve
    ```
 
 5. Open your browser and visit `http://localhost:8080`
 
-## Testing
-
-To run the tests (if implemented), use the following command:
-
-```
-npm run test
-```
-
 ## Building for Production
 
-To build the project for production, run:
+To build the project for production:
 
 ```
 npm run build
