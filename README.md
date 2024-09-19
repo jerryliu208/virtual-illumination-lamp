@@ -2,6 +2,8 @@
 
 This is an online platform for lighting virtual illumination lamps, developed using Vue.js 3. Users can light lamps for themselves and their loved ones, offering prayers and blessings.
 
+- You can visit the website at https://jerryliu208.github.io/virtual-illumination-lamp/
+
 ## Features
 
 - User registration and login
