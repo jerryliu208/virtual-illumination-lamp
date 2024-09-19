@@ -1,0 +1,35 @@
+{
+  "name": "virtual-illumination-lamp",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve --port 8080 --host 0.0.0.0",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "deploy": "sh deploy.sh"
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "core-js": "^3.25.0",
+    "vue": "^3.2.37",
+    "vue-router": "^4.1.5",
+    "vuex": "^4.0.2",
+    "@vue/cli-service": "~5.0.8"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~5.0.8",
+    "@vue/cli-plugin-eslint": "~5.0.8",
+    "@vue/cli-plugin-router": "~5.0.8",
+    "@vue/cli-plugin-vuex": "~5.0.8",
+    "@vue/cli-service": "~5.0.8",
+    "@vue/compiler-sfc": "^3.2.37",
+    "@babel/eslint-parser": "^7.18.9",
+    "eslint": "^8.23.0",
+    "eslint-plugin-vue": "^9.4.0"
+  },
+  "babel": {
+    "presets": [
+      "@vue/cli-plugin-babel/preset"
+    ]
+  }
+}

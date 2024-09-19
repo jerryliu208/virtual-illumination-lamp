@@ -1,0 +1,49 @@
+# 依賴目錄
+/node_modules
+
+# 構建輸出目錄
+/dist
+
+# 本地環境文件
+.env.local
+.env.*.local
+
+# 日誌文件
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# 編輯器目錄和文件
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# 操作系統生成的文件
+.DS_Store
+Thumbs.db
+
+# 測試覆蓋率目錄
+/coverage
+
+# Cypress 端到端測試
+/cypress/videos/
+/cypress/screenshots/
+
+# PWA 相關文件（如果您使用了 PWA 插件）
+/public/precache-manifest.*.js
+/public/service-worker.js
+
+# Vue CLI 生成的文件
+.browserslistrc
+.eslintrc.js
+babel.config.js
+
+# 其他可能的臨時文件或緩存
+*.log
+*.cache
+.cache
