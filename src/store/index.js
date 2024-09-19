@@ -3,7 +3,8 @@ import { userApi } from '@/services/api'
 
 export default createStore({
   state: {
-    user: null
+    user: null,
+    showLoginModal: false
   },
   mutations: {
     setUser(state, user) {
@@ -19,6 +20,9 @@ export default createStore({
         localStorage.removeItem('user')
         localStorage.removeItem('isAdmin')
       }
+    },
+    setShowLoginModal(state, show) {
+      state.showLoginModal = show;
     }
   },
   actions: {

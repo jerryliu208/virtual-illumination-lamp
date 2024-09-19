@@ -1,6 +1,5 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
 import Home from '../views/Home.vue';
-import Login from '../views/Auth/Login.vue';
 import Register from '../views/Auth/Register.vue';
 import ForgotPassword from '../views/Auth/ForgotPassword.vue';
 import LanternList from '../views/Lanterns/LanternList.vue';
@@ -16,7 +15,7 @@ import UserProfile from '../views/User/UserProfile.vue';
 
 const routes = [
   { path: '/', name: 'Home', component: Home },
-  { path: '/login', name: 'Login', component: Login },
+  // 移除登入路由
   { path: '/register', name: 'Register', component: Register },
   { path: '/forgot-password', name: 'ForgotPassword', component: ForgotPassword },
   { path: '/lanterns', name: 'LanternList', component: LanternList },
