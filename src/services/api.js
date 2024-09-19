@@ -40,7 +40,7 @@ const mockLanternStatus = [
   },
   {
     id: 2,
-    name: '智燈',
+    name: '智慧燈',
     totalCount: 50,
     litCount: 2,
     litBy: [
@@ -91,6 +91,23 @@ export const userApi = {
   getUsers: () => Promise.resolve(mockUsers),
   deleteUser: (userId) => Promise.resolve({ success: true, deletedUserId: userId }),
   getUserLanterns: () => Promise.resolve(mockUserLanterns), // 修改這行，移除 userId 參數
+  updateProfile: (userData) => {
+    // 模擬更新個人資料
+    return Promise.resolve({ ...userData, id: 1 });
+  },
+  changePassword: (passwordData) => {
+    // 模擬更改密碼
+    console.log('Changing password:', passwordData);  // 添加這行來使用 passwordData
+    return Promise.resolve({ success: true });
+  },
+  getUserOrders: (userId) => {
+    // 模擬獲取用戶訂單
+    console.log('Fetching orders for user:', userId);  // 添加這行來使用 userId
+    return Promise.resolve([
+      { id: 1, date: '2023-05-01', lanternName: '平安燈', amount: 100 },
+      { id: 2, date: '2023-06-15', lanternName: '智慧燈', amount: 150 },
+    ]);
+  },
 };
 
 export const paymentApi = {
@@ -120,6 +137,24 @@ export const settingsApi = {
   getSettings: () => Promise.resolve(mockSettings),
   updateSettings: (newSettings) => {
     mockSettings = { ...mockSettings, ...newSettings };
+    return Promise.resolve({ success: true });
+  },
+};
+
+// 模擬訂單數據
+const mockOrders = [
+  { id: 1, user: '張三', lantern: '平安燈', amount: 100, date: '2023-05-01', status: 'completed' },
+  { id: 2, user: '李四', lantern: '智慧燈', amount: 150, date: '2023-06-15', status: 'pending' },
+  // 添加更多模擬訂單...
+];
+
+export const orderApi = {
+  getOrders: () => Promise.resolve(mockOrders),
+  updateOrderStatus: (orderId, status) => {
+    const order = mockOrders.find(o => o.id === orderId);
+    if (order) {
+      order.status = status;
+    }
     return Promise.resolve({ success: true });
   },
 };

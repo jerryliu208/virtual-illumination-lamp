@@ -12,6 +12,7 @@ import PrayerManagement from '../views/Admin/PrayerManagement.vue';
 import SystemSettings from '../views/Admin/SystemSettings.vue';
 import LanternDetail from '../views/Lanterns/LanternDetail.vue';
 import UserProfile from '../views/User/UserProfile.vue';
+import OrderManagement from '../views/Admin/OrderManagement.vue';
 
 const routes = [
   { path: '/', name: 'Home', component: Home },
@@ -31,6 +32,7 @@ const routes = [
       { path: 'users', name: 'UserManagement', component: UserManagement },
       { path: 'lanterns', name: 'LanternManagement', component: LanternManagement },
       { path: 'prayers', name: 'PrayerManagement', component: PrayerManagement },
+      { path: 'orders', name: 'OrderManagement', component: OrderManagement },
       { path: 'settings', name: 'SystemSettings', component: SystemSettings },
     ]
   },
