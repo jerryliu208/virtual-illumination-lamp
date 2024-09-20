@@ -1,6 +1,5 @@
 <template>
-  <div class="home">
-    <!-- 輪播組件 -->
+  <div class="home fade-in">
     <div class="carousel">
       <div class="carousel-inner" :style="{ transform: `translateX(-${currentIndex * 100}%)` }">
         <div v-for="(image, index) in images" :key="index" class="carousel-item">
@@ -11,13 +10,30 @@
       <button class="carousel-control next" @click="nextSlide">&gt;</button>
     </div>
 
-    <h2>歡迎來到線上點光明燈平台</h2>
+    <h1 class="main-title">歡迎來到線上點光明燈平台</h1>
 
-    <div class="lantern-animation">
-      🏮🏮🏮
+    <div class="features">
+      <div class="feature-card">
+        <i class="fas fa-pray"></i>
+        <h3>虔誠祈福</h3>
+        <p>為您和摯愛點亮心中的光明</p>
+      </div>
+      <div class="feature-card">
+        <i class="fas fa-hand-holding-heart"></i>
+        <h3>傳遞祝福</h3>
+        <p>將美好願望傳遞給每一個人</p>
+      </div>
+      <div class="feature-card">
+        <i class="fas fa-peace"></i>
+        <h3>心靈平靜</h3>
+        <p>在這裡找到內心的寧靜與力量</p>
+      </div>
     </div>
-    <p class="welcome-text">在這裡，您可以為自己和親愛的人點亮祈福的光明燈</p>
-    <button @click="startPraying" class="start-praying-btn">開始祈福</button>
+
+    <div class="cta-section">
+      <p class="cta-text">準備好開始您的祈福之旅了嗎？</p>
+      <button @click="startPraying" class="btn btn-primary cta-button">開始祈福</button>
+    </div>
   </div>
 </template>
 
@@ -32,10 +48,9 @@ export default {
     const store = useStore();
     const router = useRouter();
 
-    // 修改輪播圖片數組
     const images = [
-      'https://i.imgur.com/ujIuGaQ.png',  // 添加 .png 擴展名
-      'https://i.imgur.com/3esBRck.jpg'   // 添加 .jpg 擴展名
+      'https://i.imgur.com/ujIuGaQ.png',
+      'https://i.imgur.com/3esBRck.jpg'
     ];
 
     const currentIndex = ref(0);
@@ -50,7 +65,7 @@ export default {
     };
 
     const startAutoSlide = () => {
-      timer.value = setInterval(nextSlide, 5000); // 每5秒切換一次
+      timer.value = setInterval(nextSlide, 5000);
     };
 
     onMounted(() => {
@@ -85,22 +100,85 @@ export default {
 <style scoped>
 .home {
   text-align: center;
-  padding: 0 0 50px 0; /* 移除頂部 padding */
+  padding: 0 0 50px 0;
 }
 
-h2 {
-  font-size: 2em;
-  margin: 30px 0;
+.main-title {
+  font-size: 2.5em;
   color: var(--primary-color);
+  margin: 40px 0;
+  font-weight: 600;
+}
+
+.features {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 50px 0;
+}
+
+.feature-card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 30px;
+  margin: 20px;
+  width: 250px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: all var(--transition-speed);
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.feature-card i {
+  font-size: 3em;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+.feature-card h3 {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+}
+
+.cta-section {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 50px 20px;
+  border-radius: 8px;
+  margin-top: 50px;
+}
+
+.cta-text {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+.cta-button {
+  font-size: 1.2em;
+  padding: 15px 30px;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all var(--transition-speed);
+}
+
+.cta-button:hover {
+  background-color: #FFE55C;
+  transform: scale(1.05);
 }
 
 .carousel {
   position: relative;
   width: 100%;
-  max-width: 1200px; /* 調整最大寬度 */
+  max-width: 1200px;
   margin: 0 auto 30px;
   overflow: hidden;
-  aspect-ratio: 16 / 9; /* 設置 16:9 的比例 */
+  aspect-ratio: 16 / 9;
 }
 
 .carousel-inner {
@@ -117,7 +195,7 @@ h2 {
 .carousel-item img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* 確保圖片填滿容器並保持比例 */
+  object-fit: cover;
 }
 
 .carousel-control {
@@ -141,42 +219,18 @@ h2 {
   right: 10px;
 }
 
-.lantern-animation {
-  font-size: 4em;
-  margin: 30px 0;
-  animation: float 3s ease-in-out infinite;
-}
-
-@keyframes float {
-   0%, 100% { transform: translateY(0); }
-   50% { transform: translateY(-20px); }
-}
-
-.welcome-text {
-  font-size: 1.2em;
-  max-width: 600px;
-  margin: 0 auto 30px;
-  line-height: 1.6;
-}
-
-.start-praying-btn {
-  font-size: 1.2em;
-  padding: 10px 20px;
-  background-color: var(--primary-color);
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.start-praying-btn:hover {
-  background-color: #8B0000;
-}
-
 @media (max-width: 768px) {
   .carousel {
-    aspect-ratio: 16 / 9; /* 保持移動設備上的比例 */
+    aspect-ratio: 16 / 9;
   }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-in {
+  animation: fadeIn var(--transition-speed) ease-in;
 }
 </style>
